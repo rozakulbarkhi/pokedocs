@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+:root {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.theme {
+  transition: 1s all ease;
+}
+
+.dark {
+  background-color: hsl(207, 26%, 17%);
+  color: white;
+}
+
+.light {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
