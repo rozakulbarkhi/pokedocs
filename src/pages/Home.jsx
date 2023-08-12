@@ -9,15 +9,7 @@ const Home = () => {
   const [name, setName] = useState("");
   const [searchData, setSearchData] = useState(null);
 
-  const { data, isLoading, error } = useContext(AppContext);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error...</div>;
-  }
+  const { data } = useContext(AppContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
