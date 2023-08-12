@@ -9,7 +9,7 @@ const Detail = () => {
   const { name } = useParams();
   const [data, setData] = useState([]);
 
-  const { theme } = useContext(AppContext);
+  const { theme, setPageInfo } = useContext(AppContext);
 
   useEffect(() => {
     try {
@@ -34,6 +34,7 @@ const Detail = () => {
       <div className="flex justify-start w-full gap-2 mb-4 md:text-md text-sm">
         <Link
           to="/"
+          onClick={() => setPageInfo({ offset: 0, limit: 20 })}
           className={theme === "dark" ? "text-blue-500" : "text-blue-600"}
         >
           Home

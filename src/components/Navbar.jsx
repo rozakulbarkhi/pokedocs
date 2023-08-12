@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
 
-  const { theme, switchTheme } = useContext(AppContext);
+  const { theme, switchTheme, setPageInfo } = useContext(AppContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
         )}
       >
         <div className="flex items-center justify-between">
-          <Link to="/">
+          <Link to="/" onClick={() => setPageInfo({ offset: 0, limit: 20 })}>
             <h1 className="uppercase font-bold md:text-xl text-lg tracking-wider">
               Pokedocs.
             </h1>

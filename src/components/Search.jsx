@@ -20,7 +20,7 @@ const Search = ({
         value={value}
         onChange={handleChange}
         className="border border-slate-800 text-gray-800 text-sm rounded-lg block w-full md:pl-10 pl-10 md:p-2 p-1.5 pr-12 md:placeholder:text-sm placeholder:text-xs"
-        placeholder="Search a pokemon..."
+        placeholder="Search pokemon by name or id"
         required
       />
       {searchData === null ? (
