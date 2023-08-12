@@ -32,7 +32,7 @@ const Navbar = () => {
         !scroll
           ? theme === "dark"
             ? "dark text-slate-100"
-            : "bg-slate-100 text-slate-800"
+            : "light text-slate-800"
           : theme === "light"
           ? "dark text-slate-100"
           : "light text-slate-800"

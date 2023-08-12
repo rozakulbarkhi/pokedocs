@@ -1,32 +1,25 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import propTypes from "prop-types";
 import axios from "axios";
+import { useQuery } from "react-query";
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
-  const [data, setData] = useState([]);
 
   const switchTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  useEffect(() => {
-    try {
-      const fetchData = async () => {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
+  const { isLoading, error, data } = useQuery({
+    queryKey: "fetchData",
+    queryFn: async () => {
+      const response = await axios.get("https://pokeapi.co/api/v2/pokemon");
 
-        if (response.status === 200) {
-          setData(response.data.results);
-        }
-      };
-
-      fetchData();
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
+      return response.data.results;
+    },
+  });
 
   return (
     <AppContext.Provider
@@ -34,6 +27,8 @@ export const AppProvider = ({ children }) => {
         theme,
         switchTheme,
         data,
+        isLoading,
+        error,
       }}
     >
       <div className={`${theme} theme`}>{children}</div>

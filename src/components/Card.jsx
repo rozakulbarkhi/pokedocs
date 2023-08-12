@@ -33,7 +33,7 @@ const Card = ({ poke, id }) => {
         <p className="mb-3 font-normal capitalize">{poke?.name}</p>
         <Link
           to={`/detail/${poke?.name}`}
-          className="inline-flex gap-2 items-center px-3 py-1.5 font-medium text-center bg-blue-700 hover:bg-blue-800 rounded text-white"
+          className="inline-flex gap-2 items-center px-3 py-1.5 font-medium bg-blue-700 hover:bg-blue-800 rounded text-white"
         >
           <span className="text-xs md:text-sm">See details</span>
           <AiFillEye />

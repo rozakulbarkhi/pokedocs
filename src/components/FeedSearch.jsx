@@ -5,9 +5,7 @@ const Feed = ({ data }) => {
   return (
     <div className="">
       <div className="grid md:grid-cols-4 grid-cols-2 md:gap-8 gap-4">
-        {data?.map((poke, index) => (
-          <Card key={index} poke={poke} id={index + 1} />
-        ))}
+        <Card poke={data} id={data.id} />
       </div>
       <div>Pagination</div>
     </div>
@@ -15,7 +13,7 @@ const Feed = ({ data }) => {
 };
 
 Feed.propTypes = {
-  data: propTypes.array,
+  data: propTypes.object.isRequired,
 };
 
 export default Feed;
