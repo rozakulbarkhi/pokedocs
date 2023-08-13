@@ -33,7 +33,7 @@ const Pagination = () => {
         <button
           onClick={handlePrev}
           className={twMerge(
-            "flex items-center justify-center px-3 h-8 text-sm font-medium disabled:bg-slate-300 disabled:text-slate-500",
+            "flex items-center justify-center px-3 h-8 text-sm font-medium disabled:bg-slate-300 disabled:text-slate-800 disabled:cursor-not-allowed",
             theme === "dark"
               ? "border rounded-l-lg"
               : "border rounded-l-lg border-slate-800"
